@@ -1231,14 +1231,13 @@ h5,
   right: 0;
   bottom: 0;
   top: 0;
-  background: rgba(0, 0, 0, 0.4);
+
   z-index: 1;
 }
 
 .site-section-hero,
 .site-section-hero .row {
-  height: 95vh;
-  min-height: 500px;
+  min-height: 100px;
   z-index: 2;
   position: relative;
 }
@@ -1259,9 +1258,9 @@ h5,
   background-repeat: no-repeat;
 }
 
-.site-section {
+/* .site-section {
   padding: 7em 0 2em;
-}
+} */
 
 .site-section.darken-bg {
   background: #1a1a1a;
