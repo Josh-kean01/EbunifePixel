@@ -998,7 +998,7 @@ h5,
   bottom: 0;
   background: #DD4A48;
   opacity: 0;
-  visibility: hidden;
+  /* visibility: hidden; */
 }
 
 @media (max-width: 991.98px) {
@@ -1494,7 +1494,6 @@ h5,
     height: 100%;
     width: 75% !important;
     margin: 0 auto;
-
   }
 }
 
