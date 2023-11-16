@@ -1496,6 +1496,10 @@ h5,
     margin: 0 auto;
 
   }
+
+  .img-80 {
+    height: 80vh;
+  }
 }
 
 img {
