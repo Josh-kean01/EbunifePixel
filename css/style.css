@@ -1990,6 +1990,14 @@ section.w3l-progress {
 }
 
 @media (max-width: 767px) {
+  .w3l-content-4 .content-info-in {
+    flex-direction: column-reverse;
+  }
+
+  .content-left{
+    margin-top: 3rem !important;
+  }
+
   .w3l-content-4 .content4-icon {
     font-size: 30px;
   }
