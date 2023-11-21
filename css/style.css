@@ -1994,10 +1994,6 @@ section.w3l-progress {
     flex-direction: column-reverse;
   }
 
-  .content-left{
-    margin-top: 3rem !important;
-  }
-
   .w3l-content-4 .content4-icon {
     font-size: 30px;
   }
@@ -2138,6 +2134,10 @@ section.w3l-progress {
     position: relative;
     z-index: 1;
     margin-top: 0px;
+  }
+
+  .w3l-content-4 .content-info-in {
+    flex-direction: column-reverse;
   }
 }
 
