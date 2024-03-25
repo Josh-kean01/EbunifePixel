@@ -1,0 +1,130 @@
+{% load static %}
+
+{% url 'index' as indexpage %}
+{% url 'services' as servicespage %}
+{% url 'blog' as blogpage %}
+{% url 'gallery' as gallerypage %}
+{% url 'about' as aboutpage %}
+{% url 'contactpage' as contactpage %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Ebunife Pixels" />
+  <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}" />
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon-32x32.png' %}" />
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon-16x16.png' %}" />
+
+  <meta name="description"
+    content="Ebunife Pixels is your go-to destination for professional photography services. We specialize in capturing the magic of weddings, birthdays, naming ceremonies, and more. Let us turn your moments into timeless memories. Contact us today!" />
+  <meta name="keywords"
+    content="photography, professional photography, weddings, birthdays, naming ceremonies, event photography, Ebunife Pixels, special occasions, memories, photo services" />
+
+  <link href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600, 700,900|Oswald:400,700" rel="stylesheet" />
+
+  <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}" />
+
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}" />
+
+  <link rel="stylesheet" href="{% static 'css/aos.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/fancybox.min.css' %}" />
+  <link rel="stylesheet" href="https://unpkg.com/claymorphism-css/dist/clay.css" />
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  <title>Ebunife Pixels - Professional Photography Services</title>
+</head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="200" style="overflow-x: hidden">
+  <div class="site-wrap">
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+
+  <header
+  class="header-bar d-flex d-lg-block align-items-center site-navbar-target"
+  style="overflow: hidden; height: 100vh"
+  data-aos="fade-right">
+  <div class="site-logo">
+    <a href="{% url 'index' %}" class="text-monospace">Ebunife Pixels</a>
+  </div>
+
+  <div
+    class="d-inline-block d-lg-none ml-md-0 ml-auto py-3"
+    style="position: relative; top: 3px"
+  >
+    <a href="#" class="site-menu-toggle js-menu-toggle"
+      ><span class="icon-menu h3"></span
+    ></a>
+  </div>
+
+  <div class="main-menu">
+   
+    <ul class="js-clone-nav">
+      
+     
+        
+      <li><a href="{{indexpage}}" class="nav-link  {% if request.path == indexpage %} active {% endif %}">Home</a></li>
+      <li><a href="{{gallerypage}}" class="nav-link {% if request.path == gallerypage %} active {% endif %}">Gallery</a></li>
+      <li><a href="{{aboutpage}}" class="nav-link {% if request.path == aboutpage %} active {% endif %}">About</a></li>
+      <li><a href="{{servicespage}}" class="nav-link {% if request.path == servicespage %} active {% endif %}">Services</a></li>
+      <li><a href="{{blogpage}}" class="nav-link {% if request.path == blogpage %} active {% endif %}">Blog</a></li>
+      <li><a href="{{indexpage}}#section-contact" class="nav-link {% if request.path == contactpage %} active {% endif %}">Contact</a></li>
+    </ul>
+
+    <ul class="social js-clone-nav">
+      <li>
+        <a href="#"><span class="icon-instagram"></span></a>
+      </li>
+      <li>
+        <a href="#"><span class="icon-facebook"></span></a>
+      </li>
+      <li>
+        <a href="#"><span class="icon-twitter"></span></a>
+      </li>
+      <li>
+        <a href="#"><span class="icon-linkedin"></span></a>
+      </li>
+    </ul>
+  </div>
+</header>
+
+{% block body %}
+    
+{% endblock body %}
+    
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+  <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'js/jquery-ui.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'js/jquery.countdown.min.js' %}"></script>
+  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'js/aos.js' %}"></script>
+  <script src="{% static 'js/lozad.min.js' %}"></script>
+
+  <script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
+
+  <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>
+
+

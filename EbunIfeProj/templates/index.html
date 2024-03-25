@@ -1,0 +1,291 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+
+    <main class="main-content" id="section-home">
+      <section class="site-section-hero bg-image mb-5" style="
+            background-image: url({%static 'images/hero-min.jpg' %});
+            background-size: cover;
+          " data-stellar-background-ratio="0.5" id="section-home">
+        <div class="row justify-content-center align-items-center" style="min-height: 90vh">
+          <div class="col-md-8 text-center hero-text mt-5">
+            <h1 class="heading text-white" data-aos="fade-in" style="font-variant: small-caps">
+              Welcome to Ebunife Pixels
+            </h1>
+            <p class="lead text-white my-4" data-aos="fade-up" data-aos-delay="100">
+              Where creativity meets the lens. <br />
+              I'm
+              <span class="text-primary" style="font-weight: 600; text-wrap: nowrap">GABRIEL OLOYEDE BLESSING,</span>
+              the eye behind the camera, capturing life's most beautiful
+              moments. With a passion for storytelling through imagery, I'm
+              here to turn your memories into art. Explore my portfolio and
+              let's create visual magic together."
+            </p>
+            <p data-aos="fade-in" data-aos-delay="100">
+              <button href="#section-contact" class="btn btn-primary smoothscroll px-lg-3 p-2">
+                Available for hire
+              </button>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="container-fluid site-section">
+        <div class="row mb-3">
+          <div class="col-12 text-center">
+            <h2 class="heading" style="font-variant: small-caps">Gallery</h2>
+          </div>
+        </div>
+
+        <section class="row align-items-stretch photos" id="section-photos">
+          <div class="col-12">
+            <div class="row align-items-stretch">
+              {% for picture in pictures_gallery %}
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="{{forloop.counter}}00">
+                <a href="{{picture.image.url}}" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="{{picture.image.url}}" alt="Image" class="img-fluid mb-0" />
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+             
+              {% endfor %}
+
+            </div>
+
+
+            <div class="col-md-12 d-flex justify-content-center my-5">
+              <a href="{% url 'gallery' %}" type="submit" class="btn btn-outline-primary px-lg-3 py-2">
+                Explore my Gallery
+              </a>
+            </div>
+          </div>
+        </section>
+        <!-- #section-photos -->
+
+        <section class="site-section" id="section-about">
+          <div class="container-fluid">
+            <div class="row justify-content-center">
+              <div class="col-md-10">
+                <h2 class="heading" style="font-variant: small-caps">
+                  About Me
+                </h2>
+                <div class="about_sec">
+                  <img src="{% static 'images/ebun 2.jpg' %}" alt="Image" class="w-50 me-3 about_img" />
+
+                  <div data-aos="fade-in" data-aos-delay="100" class="p-3" style="align-self: center">
+                    <h2 class=""></h2>
+                    <p>
+                      Steering the ship at Ebunife Pixels, I'm a young and
+                      promising photographer. My passion lies in transforming
+                      life's moments into captivating visual stories, whether
+                      it's weddings, birthdays, naming ceremonies,
+                      conventions, and more.
+                    </p>
+                    <p>
+                      I believe in the power of photography to freeze time,
+                      preserving the emotions, laughter, and love that make
+                      each event unique. With every click of my camera, I aim
+                      to encapsulate the essence of your special moments. I'm
+                      dedicated to working closely with you, ensuring that
+                      your vision and emotions are at the heart of every
+                      photograph.
+                    </p>
+                  </div>
+                </div>
+
+                <div data-aos="fade-in" data-aos-delay="100">
+                  <p class="mt-5" style="font-weight: 600; font-size: larger">
+                    Our photography services are designed to make every moment
+                    extraordinary. <br />
+                    Explore our services today!"
+                  </p>
+
+                  <div class="d-block d-md-flex">
+                    <div class="mr-md-auto mr-2">
+                      <ul class="ul-check list-unstyled primary">
+                        
+                        {% for service in servicesA %}
+                        <li>{{service.service}}</li>
+                       {% endfor %}
+                        
+                      </ul>
+                    </div>
+                    <div class="mr-md-auto">
+                      <ul class="ul-check list-unstyled primary">
+                        {% for service in servicesB %}
+                        <li>{{service.service}}</li>
+                       {% endfor %}
+                        
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="site-section" id="section-testimonial">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-md-8 text-center">
+                <h2 class="heading" style="font-variant: small-caps">
+                  Testimonial
+                </h2>
+
+                <div class="row justify-content-center">
+                  <div class="col-md-12">
+                    <div class="owl-carousel slide-one-item home-slider">
+                      
+                      {% for testimony in testimonies %}
+                      
+                      <div class="testimony text-center px-md-4">
+                        <figure class="mx-auto d-inline-block">
+                          <img src="{{testimony.img.url}}" alt="{{testimony.author}} image"
+                            class="mx-auto img-fluid w-25 rounded-circle" />
+                        </figure>
+                        <p class="text-black"><strong>{{testimony.author}}</strong></p>
+                        <blockquote>
+                          <p>
+                            &ldquo;{{testimony.testimony}}&rdquo;
+                          </p>
+                        </blockquote>
+                      </div>
+                      {% endfor %}
+
+
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="site-section" id="section-blog">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-md-10">
+                <div class="row">
+                  <h2 class="heading" data-aos="fade-up" style="font-variant: small-caps">
+                    Blog
+                  </h2>
+
+                  {% for post in posts %}
+                    
+                 
+                  <div class="col-md-12 mb-4" data-aos="fade-up">
+                    <div class="d-md-flex d-block blog-entry align-items-start">
+                      <div class="mr-0 mr-md-5 mb-3 img-wrap">
+                        <a href="#"><img src="{{post.cover.url}}" alt="Image" class="img-fluid mb-0" /></a>
+                      </div>
+                      <div>
+                        <h2 class="mt-0 mb-2">
+                          <a href="#">{{post.title}}</a>
+                        </h2>
+                        <div class="meta mb-3">
+                          Posted by {{post.author}} on <a href="#">{{post.date_posted}}</a>
+                        </div>
+                        <p>
+                          {{post.content|truncatewords:"30"|striptags}}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  {% endfor %}
+
+                
+
+                  <div class="col-12 text-center">
+                    <a href="{% url 'blog' %}" class="btn btn-primary px-4">See More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="site-section" id="section-contact">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-md-10">
+                <h2 class="mb-5 heading" style="font-variant: small-caps">
+                  Contact
+                </h2>
+
+                
+                {% if not messages %}
+                <form method="POST"  action="{% url 'index' %}">
+                  {% csrf_token %}
+                  <div class="row form-group">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                      <label class="" for="fname">First Name</label>
+                      <input type="text" name="fname" id="fname" class="form-control" />
+                    </div>
+                    <div class="col-md-6">
+                      <label class="" for="lname">Last Name</label>
+                      <input type="text" name="lname" id="lname" class="form-control" />
+                    </div>
+                  </div>
+
+                  <div class="row form-group">
+                    <div class="col-md-12">
+                      <label class="" for="email">Email</label>
+                      <input type="email" name="email" id="email" class="form-control" />
+                    </div>
+                  </div>
+
+                  <div class="row form-group">
+                    <div class="col-md-12">
+                      <label class="" for="subject">Subject</label>
+                      <input type="subject" name="subject" id="subject" class="form-control" />
+                    </div>
+                  </div>
+
+                  <div class="row form-group mb-5">
+                    <div class="col-md-12">
+                      <label class="" for="message">Message</label>
+                      <textarea name="message" id="message" cols="30" rows="7" class="form-control"></textarea>
+                    </div>
+                  </div>
+
+                  <div class="row form-group">
+                    <div class="col-md-12 d-flex justify-content-end">
+                      <input type="submit" name='contact_form' class="btn btn-primary px-lg-3 py-2" value="Send Message">
+                        
+                    
+                    </div>
+                  </div>
+                </form>
+
+                {% else %}
+                
+                {% for message in messages %}
+                    <p style="font-size: larger;">{{message}}</p>
+                {% endfor %}
+                  
+                {% endif %}
+                  
+             
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="row justify-content-center">
+          <div class="col-md-12 text-center pt-5">
+            <p style="font-variant: small-caps; font-size: large">
+              Copyright &copy; {% now 'Y' %} . All Rights Reserved. &mdash; Designed by
+              <a href="#">Josh Kean</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  {% endblock body %}
